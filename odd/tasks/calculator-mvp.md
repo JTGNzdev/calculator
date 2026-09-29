@@ -53,7 +53,7 @@ This is the first project in a progressive software-development learning path. T
   - Checks: focused calculator logic tests pass; TypeScript build succeeds.
   - Suggested commit: `feat: implement calculator state and arithmetic`.
 
-- [ ] **CALC-03 — Build the responsive React interface**
+- [x] **CALC-03 — Build the responsive React interface**
   - Route: delegated writer (component, styles, and component tests are a multi-file unit).
   - Render operation/result displays and calculator controls.
   - Wire button events and basic keyboard input with accessible labels and sensible focus behavior.
@@ -85,7 +85,7 @@ This is the first project in a progressive software-development learning path. T
 
 ## Progress and evidence
 
-- Current state: CALC-01 and CALC-02 are implemented and verified; the local Git repository remains on unborn branch `main` until the authorized initial commit is created.
+- Current state: CALC-01 and CALC-02 are committed and pushed on `main`; CALC-03 is implemented and verified on local branch `feat/calculator-interface`, awaiting its delivery decision.
 - CALC-01 outcome: minimal Vite 6 + React 19 + TypeScript scaffold, Vitest 3 with jsdom and React Testing Library, strict project references, baseline accessible render test, and ignored dependency/build/runtime artifacts.
 - CALC-01 verification: `npm install`, focused tests, production build, independent verification, and parent spot check all passed.
 - CALC-02 outcome: pure typed state transitions and display formatters support arithmetic, decimals, sign toggle, clear, delete, immediate chaining, operator replacement, equals, division-by-zero recovery, post-result behavior, and non-finite protection.
@@ -94,8 +94,13 @@ This is the first project in a progressive software-development learning path. T
 - CALC-02 final independent verification passed (48 tests and production build); no blockers remained.
 - Parent spot check: full `npm test -- --run` passed (2 files, 49 tests).
 - Known non-blocking issue: `npm install` reported two moderate transitive development-dependency advisories in the jsdom chain; no forced audit mutation was attempted.
-- Commit evidence: authorized initial boundary pending creation with proposed message `feat: bootstrap typed calculator core`.
+- Commit evidence: `ff90107` (`feat: bootstrap typed calculator core`) contains the verified CALC-01 and CALC-02 boundary and was pushed to `origin/main`.
+- Repository evidence: private `https://github.com/JTGNzdev/calculator`, default branch `main`, HTTPS `origin`, clean synchronized push.
+- CALC-03 implementation outcome: responsive React calculator UI, accessible expression/result/error display, button controls, keyboard mapping, modifier guards, listener cleanup, mobile-first CSS, and 15 component behavior tests.
+- CALC-03 writer verification passed (63 total tests and production build). Independent verification initially found missing expression live semantics and incomplete keyboard/lifecycle regression coverage; a bounded correction added polite expression announcements and four targeted tests.
+- CALC-03 final independent verification passed with no blockers; parent spot check `npm test -- --run` passed (2 files, 63 tests), and structural readback confirmed React delegates arithmetic/formatting to the public domain API.
+- CALC-03 delivery decision: the user authorized its cohesive work-unit commit and push of `feat/calculator-interface`; no pull request was requested. Current authored diff is approximately 800 lines including tests/CSS, above the advisory 400-line heuristic but cohesive as one interface behavior unit.
 
 ## Next step
 
-Create the private GitHub repository, commit the verified scaffold and calculator core, push `main`, then begin CALC-03.
+Create and push the CALC-03 work-unit commit, record its identity, then begin CALC-04 documentation and final verification.

@@ -1,0 +1,251 @@
+/*
+ * Calculator interface styles: mobile-first plain CSS.
+ *
+ * Layout target: the keypad is a fixed 4-column grid that fits a 320px
+ * viewport without horizontal scrolling; wider viewports only increase
+ * spacing, sizes, and comfort.
+ */
+
+:root {
+  color-scheme: dark;
+  --bg: #101318;
+  --panel: #1a1f2b;
+  --panel-edge: #262d3d;
+  --display-bg: #12151d;
+  --key-digit: #27303f;
+  --key-digit-hover: #313b4d;
+  --key-utility: #3a4356;
+  --key-utility-hover: #465066;
+  --key-operator: #3f5a8f;
+  --key-operator-hover: #4c6aa8;
+  --key-equals: #f59e0b;
+  --key-equals-hover: #fbbf24;
+  --key-equals-text: #1b1305;
+  --text: #f3f6fb;
+  --text-dim: #9aa7bd;
+  --error: #ff8a8a;
+  --focus: #8ec2ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    sans-serif;
+  line-height: 1.4;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.75rem;
+}
+
+/* Visible keyboard focus for every interactive element. */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.calculator {
+  width: min(26rem, 100%);
+  padding: 1rem;
+  border-radius: 1.25rem;
+  background: var(--panel);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.calculator-title {
+  margin: 0 0 0.875rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* Display: the expression line sits above the current value/error line. */
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  min-width: 0;
+  margin-bottom: 0.875rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--panel-edge);
+  background: var(--display-bg);
+  text-align: right;
+}
+
+.display-expression {
+  margin: 0;
+  min-height: 1.5em; /* Reserve the row so the layout never jumps. */
+  width: 100%;
+  color: var(--text-dim);
+  font-size: 0.9375rem;
+  overflow-wrap: anywhere;
+}
+
+.display-value {
+  margin: 0;
+  width: 100%;
+  font-size: clamp(2rem, 11vw, 2.75rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.display-error {
+  color: var(--error);
+  font-size: clamp(1.1875rem, 6vw, 1.625rem);
+  font-weight: 500;
+}
+
+/* Keypad: a 4-column grid; comfortable touch targets come first. */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.625rem;
+}
+
+.key {
+  min-width: 0;
+  min-height: 3.5rem; /* 56px touch target on mobile. */
+  padding: 0.25rem;
+  border: none;
+  border-radius: 0.75rem;
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--key-digit);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation; /* Remove the 300ms tap delay. */
+}
+
+.key:hover {
+  background: var(--key-digit-hover);
+}
+
+.key:active {
+  transform: translateY(1px);
+}
+
+.key--utility {
+  background: var(--key-utility);
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.key--utility:hover {
+  background: var(--key-utility-hover);
+}
+
+.key--operator {
+  background: var(--key-operator);
+}
+
+.key--operator:hover {
+  background: var(--key-operator-hover);
+}
+
+.key--equals {
+  background: var(--key-equals);
+  color: var(--key-equals-text);
+}
+
+.key--equals:hover {
+  background: var(--key-equals-hover);
+}
+
+.key--wide {
+  grid-column: span 2;
+}
+
+/* Keyboard hints: the sign-toggle key (N) is documented in the UI. */
+.keyboard-hints {
+  margin-top: 1rem;
+  color: var(--text-dim);
+  font-size: 0.8125rem;
+}
+
+.keyboard-hints h2 {
+  margin: 0 0 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.keyboard-hints ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 0.875rem;
+}
+
+kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  padding: 0.0625rem 0.375rem;
+  border-radius: 0.3rem;
+  border: 1px solid #333c50;
+  background: #232a38;
+  color: var(--text);
+}
+
+/* Wider viewports: more comfort, larger display, roomier keys. */
+@media (min-width: 480px) {
+  body {
+    padding: 2rem 1rem;
+    align-items: center;
+  }
+
+  .calculator {
+    padding: 1.5rem;
+  }
+
+  .display {
+    padding: 1rem 1.25rem;
+  }
+
+  .display-expression {
+    font-size: 1.0625rem;
+  }
+
+  .display-value {
+    font-size: 3rem;
+  }
+
+  .display-error {
+    font-size: 1.75rem;
+  }
+
+  .keypad {
+    gap: 0.75rem;
+  }
+
+  .key {
+    min-height: 4rem; /* 64px touch target on desktop. */
+    font-size: 1.375rem;
+  }
+}
