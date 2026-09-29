@@ -105,7 +105,8 @@ This is the first project in a progressive software-development learning path. T
 - CALC-04 final independent verification accepted the README and project; `npm test -- --run` and `npm run build` passed. Parent spot check also passed all 63 tests.
 - CALC-04 commit evidence: `1a8d49f` (`docs: document calculator setup and usage`) contains the accepted README and completion state.
 - Feature evidence: 63 tests pass, the TypeScript/Vite production build passes, and every requested MVP behavior is implemented.
+- Delivery state: local `feat/calculator-interface` is synchronized with `origin/feat/calculator-interface`; no pull request or merge has been performed.
 
 ## Next step
 
-Push the completed feature branch. Pull request creation and merge remain separate user decisions.
+Decide whether to open a pull request or merge later. Both actions remain explicitly user-controlled.
