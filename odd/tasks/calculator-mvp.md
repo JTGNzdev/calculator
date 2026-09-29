@@ -85,7 +85,7 @@ This is the first project in a progressive software-development learning path. T
 
 ## Progress and evidence
 
-- Current state: CALC-01 through CALC-03 are committed and pushed; CALC-04 documentation and final verification are accepted on `feat/calculator-interface`, awaiting the final delivery decision.
+- Current state: CALC-01 through CALC-04 are implemented, verified, committed, and ready on `feat/calculator-interface`.
 - CALC-01 outcome: minimal Vite 6 + React 19 + TypeScript scaffold, Vitest 3 with jsdom and React Testing Library, strict project references, baseline accessible render test, and ignored dependency/build/runtime artifacts.
 - CALC-01 verification: `npm install`, focused tests, production build, independent verification, and parent spot check all passed.
 - CALC-02 outcome: pure typed state transitions and display formatters support arithmetic, decimals, sign toggle, clear, delete, immediate chaining, operator replacement, equals, division-by-zero recovery, post-result behavior, and non-finite protection.
@@ -103,8 +103,9 @@ This is the first project in a progressive software-development learning path. T
 - CALC-04 outcome: `README.md` documents purpose, stack, setup, scripts, features, keyboard controls, project structure, learning boundaries, testing, repository context, and future ideas.
 - CALC-04 writer verification passed (63 tests and production build). Independent verification found one inaccurate recovery phrase (`C` only); the parent corrected it to the clear action (`C` or `Escape`).
 - CALC-04 final independent verification accepted the README and project; `npm test -- --run` and `npm run build` passed. Parent spot check also passed all 63 tests.
-- CALC-04 delivery decision: the user authorized the documentation/tracking work-unit commit and push to `origin/feat/calculator-interface`; no pull request or merge was requested.
+- CALC-04 commit evidence: `1a8d49f` (`docs: document calculator setup and usage`) contains the accepted README and completion state.
+- Feature evidence: 63 tests pass, the TypeScript/Vite production build passes, and every requested MVP behavior is implemented.
 
 ## Next step
 
-Create and push the CALC-04 work-unit commit, record its identity, and close the feature. Pull request and merge remain separate user decisions.
+Push the completed feature branch. Pull request creation and merge remain separate user decisions.
