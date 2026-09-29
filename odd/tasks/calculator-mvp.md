@@ -62,7 +62,7 @@ This is the first project in a progressive software-development learning path. T
   - Checks: component tests pass; production build succeeds; no evident layout overflow at narrow widths.
   - Suggested commit: `feat: add responsive calculator interface`.
 
-- [ ] **CALC-04 — Document and verify the project**
+- [x] **CALC-04 — Document and verify the project**
   - Route: delegated writer for README; verification route determined by native assessment after the writer returns.
   - Write README sections for description, stack, installation, scripts, usage, features, project structure, learning boundaries, and future publication.
   - Run the full test suite and production build.
@@ -85,7 +85,7 @@ This is the first project in a progressive software-development learning path. T
 
 ## Progress and evidence
 
-- Current state: CALC-01 and CALC-02 are committed and pushed on `main`; CALC-03 is implemented and verified on local branch `feat/calculator-interface`, awaiting its delivery decision.
+- Current state: CALC-01 through CALC-03 are committed and pushed; CALC-04 documentation and final verification are accepted on `feat/calculator-interface`, awaiting the final delivery decision.
 - CALC-01 outcome: minimal Vite 6 + React 19 + TypeScript scaffold, Vitest 3 with jsdom and React Testing Library, strict project references, baseline accessible render test, and ignored dependency/build/runtime artifacts.
 - CALC-01 verification: `npm install`, focused tests, production build, independent verification, and parent spot check all passed.
 - CALC-02 outcome: pure typed state transitions and display formatters support arithmetic, decimals, sign toggle, clear, delete, immediate chaining, operator replacement, equals, division-by-zero recovery, post-result behavior, and non-finite protection.
@@ -99,8 +99,12 @@ This is the first project in a progressive software-development learning path. T
 - CALC-03 implementation outcome: responsive React calculator UI, accessible expression/result/error display, button controls, keyboard mapping, modifier guards, listener cleanup, mobile-first CSS, and 15 component behavior tests.
 - CALC-03 writer verification passed (63 total tests and production build). Independent verification initially found missing expression live semantics and incomplete keyboard/lifecycle regression coverage; a bounded correction added polite expression announcements and four targeted tests.
 - CALC-03 final independent verification passed with no blockers; parent spot check `npm test -- --run` passed (2 files, 63 tests), and structural readback confirmed React delegates arithmetic/formatting to the public domain API.
-- CALC-03 delivery decision: the user authorized its cohesive work-unit commit and push of `feat/calculator-interface`; no pull request was requested. Current authored diff is approximately 800 lines including tests/CSS, above the advisory 400-line heuristic but cohesive as one interface behavior unit.
+- CALC-03 commit evidence: `430f868` (`feat: add responsive calculator interface`) contains the cohesive interface, tests, CSS, and tracking update; it was pushed to `origin/feat/calculator-interface`. No pull request was created.
+- CALC-04 outcome: `README.md` documents purpose, stack, setup, scripts, features, keyboard controls, project structure, learning boundaries, testing, repository context, and future ideas.
+- CALC-04 writer verification passed (63 tests and production build). Independent verification found one inaccurate recovery phrase (`C` only); the parent corrected it to the clear action (`C` or `Escape`).
+- CALC-04 final independent verification accepted the README and project; `npm test -- --run` and `npm run build` passed. Parent spot check also passed all 63 tests.
+- CALC-04 delivery decision: the user authorized the documentation/tracking work-unit commit and push to `origin/feat/calculator-interface`; no pull request or merge was requested.
 
 ## Next step
 
-Create and push the CALC-03 work-unit commit, record its identity, then begin CALC-04 documentation and final verification.
+Create and push the CALC-04 work-unit commit, record its identity, and close the feature. Pull request and merge remain separate user decisions.
