@@ -1,0 +1,58 @@
+name: Solicitud de funcionalidad
+description: Proponer una funcionalidad nueva para Calculator.
+title: "[Funcionalidad] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problema-necesidad
+    attributes:
+      label: Problema o necesidad
+      description: Describe el problema o la necesidad que resolvería.
+      placeholder: >
+        Por ejemplo, el historial de operaciones no es visible
+        en pantallas pequeñas.
+    validations:
+      required: true
+  - type: textarea
+    id: resultado-esperado
+    attributes:
+      label: Resultado esperado
+      description: Describe el comportamiento esperado al implementarse.
+      placeholder: >
+        Por ejemplo, el historial se muestra en un panel
+        lateral plegable.
+    validations:
+      required: true
+  - type: textarea
+    id: alcance-propuesto
+    attributes:
+      label: Alcance propuesto
+      description: Indica qué partes se ven afectadas y qué queda fuera.
+      placeholder: >
+        Por ejemplo, afecta la interfaz y los estilos;
+        no cambia la lógica de cálculo.
+    validations:
+      required: true
+  - type: textarea
+    id: criterios-aceptacion
+    attributes:
+      label: Criterios de aceptación
+      description: Enumera condiciones verificables de completitud.
+      placeholder: >
+        Por ejemplo, el panel se puede plegar y desplegar;
+        el historial persiste al recargar.
+    validations:
+      required: true
+  - type: textarea
+    id: plan-verificacion
+    attributes:
+      label: Plan de verificación
+      description: >
+        Describe "cómo se verificará el cambio": comandos,
+        pruebas u otros controles del repositorio.
+      placeholder: >
+        Por ejemplo, ejecutar los tests existentes y probar
+        el panel en dos tamaños de pantalla.
+    validations:
+      required: true
