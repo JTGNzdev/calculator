@@ -198,12 +198,15 @@ pruebas).
   de TypeScript/Vite, y cada comportamiento solicitado del MVP está
   implementado.
 - Estado de entrega: el commit `7717dea` quedó sincronizado con
-`origin/feat/calculator-interface` al completarse la funcionalidad; desde
-entonces la rama integró los commits de política de repositorio provenientes
-de `main` y ahora tiene pendientes los cambios de documentación en español
-antes del próximo push. No se ha realizado ningún pull request ni merge.
+  `origin/feat/calculator-interface` al completarse la funcionalidad; luego la
+  rama integró la política de `main` mediante `d3c8a88` y subió la traducción
+  documental en `d7be2cb`.
+- Pull request: `#2`, `feat: completar el MVP de Calculator`, abierto en
+  `https://github.com/JTGNzdev/calculator/pull/2` desde
+  `feat/calculator-interface` hacia `main`, vinculado al issue aprobado `#1` y
+  etiquetado con `type:feature` y `size:exception`. No se realizó ningún merge.
 
 ## Próximo paso
 
-Decidir si se abre un pull request o se fusiona más adelante. Ambas acciones
-siguen siendo controladas explícitamente por el usuario.
+Revisar y fusionar el pull request `#2` cuando el usuario lo decida. El merge
+sigue bajo control explícito del usuario.
