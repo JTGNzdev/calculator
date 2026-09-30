@@ -27,7 +27,7 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
 - El formulario de issues y este registro deben llegar a `main` antes de crear el issue, porque los formularios sólo son autoridad desde la rama principal.
 - Toda la documentación Markdown, incluida la existente, debe estar en español. La comunicación interna entre agentes puede permanecer en inglés.
 - La rama de Calculator no se modifica hasta que termine la preparación de la política en `main`.
-- El PR de Calculator contiene aproximadamente 1.045 líneas modificadas. Una división honesta todavía deja la unidad cohesiva de interfaz, tests y CSS por encima de 400 líneas; por eso se requiere una `size:exception` documentada, en lugar de separar artificialmente código y pruebas.
+- El PR de Calculator contiene 1.342 líneas modificadas. Una división honesta todavía deja la unidad cohesiva de interfaz, tests y CSS por encima de 400 líneas; por eso se requiere una `size:exception` documentada, en lugar de separar artificialmente código y pruebas.
 - No se crea ni fusiona un pull request sin la autorización explícita correspondiente.
 
 ## Tareas
@@ -45,10 +45,10 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
   - Buscar duplicados entre issues abiertos y cerrados.
   - Materializar el issue con evidencia verificada del proyecto y crearlo una sola vez.
   - Solicitar autorización exacta para las etiquetas protegidas cuando exista el número de issue.
-  - Aplicar y releer `status:approved` y `size:exception` únicamente después de la autorización explícita.
+  - Aplicar y releer `status:approved` únicamente después de la autorización explícita; `size:exception` se autoriza y aplica luego sobre el PR exacto.
   - Checks: el cuerpo coincide con el formulario; las etiquetas y el estado se verifican en GitHub.
 
-- [ ] **PRPOL-03 — Traducir la documentación y abrir el pull request**
+- [x] **PRPOL-03 — Traducir la documentación y abrir el pull request**
   - Ruta: writer delegado para traducir los Markdown; flujo de GitHub administrado por el padre.
   - Traducir `README.md` y el registro activo de Calculator sin alterar comandos, nombres de archivos ni comportamiento documentado.
   - Integrar la política de `main` en `feat/calculator-interface` sin cambiar el comportamiento de la aplicación.
@@ -72,7 +72,7 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
 - Descubrimiento inicial: no había archivos `.github`, issues ni PR existente para la rama de funcionalidad.
 - Las etiquetas existentes son únicamente las predeterminadas de GitHub; faltan las etiquetas del flujo.
 - Capacidad del repositorio: el actor autenticado tiene permisos `admin` y `maintain`.
-- Evidencia de la aplicación: pasan 63 tests y el build de producción; la rama de funcionalidad está sincronizada con su remoto.
+- Evidencia de la aplicación: pasan 63 tests y el build de producción; la rama de funcionalidad contiene la política integrada y la traducción, y está sincronizada con su remoto.
 - Preferencia de idioma confirmada: todos los Markdown existentes y futuros deben estar en español.
 - PRPOL-01: el formulario contiene cinco campos obligatorios en español y sólo aplica `enhancement` al crear el issue; la verificación estructural independiente fue aceptada en `main`.
 - Etiquetas creadas y verificadas en GitHub: `status:approved`, `type:feature` y `size:exception`, con descripciones en español.
@@ -82,7 +82,15 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
 - La búsqueda de duplicados entre issues abiertos y cerrados no encontró candidatos.
 - Issue confirmado: `#1`, `[Funcionalidad] Construir el MVP web de Calculator`, abierto en `https://github.com/JTGNzdev/calculator/issues/1`; el cuerpo coincide con los cinco campos del formulario y la creación aplicó únicamente `enhancement`.
 - Aprobación protegida confirmada: el usuario autorizó exactamente agregar `status:approved` al issue `#1`; el actor autenticado `JTGNzdev` tenía permiso `ADMIN`; la lectura posterior confirmó `enhancement` y `status:approved` sin alterar el estado abierto.
+- Integración confirmada: `d3c8a88` incorporó los commits actuales de política de `main` en `feat/calculator-interface` sin modificar el comportamiento de la aplicación.
+- Traducción aceptada: `README.md` y `odd/tasks/calculator-mvp.md` quedaron en español profesional neutral; se preservaron comandos, rutas, IDs, hashes, conteos y evidencia histórica. La verificación independiente aprobó los 63 tests y el build.
+- Commit de traducción: `d7be2cb` (`docs: translate project documentation to Spanish`) fue subido a `origin/feat/calculator-interface`.
+- PR confirmado: `#2`, `feat: completar el MVP de Calculator`, abierto en `https://github.com/JTGNzdev/calculator/pull/2`, con base `main`, head `feat/calculator-interface`, estado no draft y vínculo `Closes #1`.
+- Etiquetas confirmadas tras autorización exacta del usuario y verificación `ADMIN`: exactamente una etiqueta de tipo (`type:feature`) y la protegida `size:exception`.
+- Justificación de tamaño: 1.342 líneas modificadas; una pasada de división dejó la interfaz, sus tests y CSS como unidad cohesiva todavía superior a 400 líneas, por lo que se evitó separar comportamiento de su verificación.
+- Estado del PR: `MERGEABLE`, `CLEAN`, 7 archivos, 1.242 adiciones y 100 eliminaciones. GitHub no informa checks automatizados configurados para la rama; las verificaciones locales obligatorias sí pasaron.
+- La rama local está sincronizada con `origin/feat/calculator-interface`; los `.DS_Store` no rastreados permanecen fuera del alcance.
 
 ## Próximo paso
 
-Integrar la política de `main` en la rama de funcionalidad, traducir toda su documentación Markdown al español y abrir el PR vinculado al issue `#1`.
+Revisar y fusionar el PR `#2` cuando el usuario lo decida. El merge no está autorizado en esta sesión.
