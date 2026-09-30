@@ -27,7 +27,7 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
 - El formulario de issues y este registro deben llegar a `main` antes de crear el issue, porque los formularios sólo son autoridad desde la rama principal.
 - Toda la documentación Markdown, incluida la existente, debe estar en español. La comunicación interna entre agentes puede permanecer en inglés.
 - La rama de Calculator no se modifica hasta que termine la preparación de la política en `main`.
-- El PR de Calculator contiene aproximadamente 1.045 líneas modificadas. Una división honesta todavía deja la unidad cohesiva de interfaz, tests y CSS por encima de 400 líneas; por eso se requiere una `size:exception` documentada, en lugar de separar artificialmente código y pruebas.
+- El PR de Calculator contiene 1.342 líneas modificadas. Una división honesta todavía deja la unidad cohesiva de interfaz, tests y CSS por encima de 400 líneas; por eso se requiere una `size:exception` documentada, en lugar de separar artificialmente código y pruebas.
 - No se crea ni fusiona un pull request sin la autorización explícita correspondiente.
 
 ## Tareas
@@ -45,7 +45,7 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
   - Buscar duplicados entre issues abiertos y cerrados.
   - Materializar el issue con evidencia verificada del proyecto y crearlo una sola vez.
   - Solicitar autorización exacta para las etiquetas protegidas cuando exista el número de issue.
-  - Aplicar y releer `status:approved` y `size:exception` únicamente después de la autorización explícita.
+  - Aplicar y releer `status:approved` únicamente después de la autorización explícita; `size:exception` se autoriza y aplica luego sobre el PR exacto.
   - Checks: el cuerpo coincide con el formulario; las etiquetas y el estado se verifican en GitHub.
 
 - [x] **PRPOL-03 — Traducir la documentación y abrir el pull request**
@@ -72,7 +72,7 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
 - Descubrimiento inicial: no había archivos `.github`, issues ni PR existente para la rama de funcionalidad.
 - Las etiquetas existentes son únicamente las predeterminadas de GitHub; faltan las etiquetas del flujo.
 - Capacidad del repositorio: el actor autenticado tiene permisos `admin` y `maintain`.
-- Evidencia de la aplicación: pasan 63 tests y el build de producción; la rama de funcionalidad estuvo sincronizada al cierre del MVP y ahora contiene la política integrada y la traducción pendiente de subir.
+- Evidencia de la aplicación: pasan 63 tests y el build de producción; la rama de funcionalidad contiene la política integrada y la traducción, y está sincronizada con su remoto.
 - Preferencia de idioma confirmada: todos los Markdown existentes y futuros deben estar en español.
 - PRPOL-01: el formulario contiene cinco campos obligatorios en español y sólo aplica `enhancement` al crear el issue; la verificación estructural independiente fue aceptada en `main`.
 - Etiquetas creadas y verificadas en GitHub: `status:approved`, `type:feature` y `size:exception`, con descripciones en español.
