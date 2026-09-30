@@ -48,7 +48,7 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
   - Aplicar y releer `status:approved` y `size:exception` únicamente después de la autorización explícita.
   - Checks: el cuerpo coincide con el formulario; las etiquetas y el estado se verifican en GitHub.
 
-- [ ] **PRPOL-03 — Traducir la documentación y abrir el pull request**
+- [x] **PRPOL-03 — Traducir la documentación y abrir el pull request**
   - Ruta: writer delegado para traducir los Markdown; flujo de GitHub administrado por el padre.
   - Traducir `README.md` y el registro activo de Calculator sin alterar comandos, nombres de archivos ni comportamiento documentado.
   - Integrar la política de `main` en `feat/calculator-interface` sin cambiar el comportamiento de la aplicación.
@@ -84,7 +84,13 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
 - Aprobación protegida confirmada: el usuario autorizó exactamente agregar `status:approved` al issue `#1`; el actor autenticado `JTGNzdev` tenía permiso `ADMIN`; la lectura posterior confirmó `enhancement` y `status:approved` sin alterar el estado abierto.
 - Integración confirmada: `d3c8a88` incorporó los commits actuales de política de `main` en `feat/calculator-interface` sin modificar el comportamiento de la aplicación.
 - Traducción aceptada: `README.md` y `odd/tasks/calculator-mvp.md` quedaron en español profesional neutral; se preservaron comandos, rutas, IDs, hashes, conteos y evidencia histórica. La verificación independiente aprobó los 63 tests y el build.
+- Commit de traducción: `d7be2cb` (`docs: translate project documentation to Spanish`) fue subido a `origin/feat/calculator-interface`.
+- PR confirmado: `#2`, `feat: completar el MVP de Calculator`, abierto en `https://github.com/JTGNzdev/calculator/pull/2`, con base `main`, head `feat/calculator-interface`, estado no draft y vínculo `Closes #1`.
+- Etiquetas confirmadas tras autorización exacta del usuario y verificación `ADMIN`: exactamente una etiqueta de tipo (`type:feature`) y la protegida `size:exception`.
+- Justificación de tamaño: 1.342 líneas modificadas; una pasada de división dejó la interfaz, sus tests y CSS como unidad cohesiva todavía superior a 400 líneas, por lo que se evitó separar comportamiento de su verificación.
+- Estado del PR: `MERGEABLE`, `CLEAN`, 7 archivos, 1.242 adiciones y 100 eliminaciones. GitHub no informa checks automatizados configurados para la rama; las verificaciones locales obligatorias sí pasaron.
+- La rama local está sincronizada con `origin/feat/calculator-interface`; los `.DS_Store` no rastreados permanecen fuera del alcance.
 
 ## Próximo paso
 
-Confirmar y subir la traducción, crear el PR vinculado al issue `#1`, solicitar la excepción de tamaño exacta sobre ese PR y verificar sus metadatos y checks.
+Revisar y fusionar el PR `#2` cuando el usuario lo decida. El merge no está autorizado en esta sesión.
