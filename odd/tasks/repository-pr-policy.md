@@ -76,9 +76,10 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
 - Preferencia de idioma confirmada: todos los Markdown existentes y futuros deben estar en español.
 - PRPOL-01: el formulario contiene cinco campos obligatorios en español y sólo aplica `enhancement` al crear el issue; la verificación estructural independiente fue aceptada en `main`.
 - Etiquetas creadas y verificadas en GitHub: `status:approved`, `type:feature` y `size:exception`, con descripciones en español.
+- Evidencia del commit: `66b2e1f` (`chore: add repository issue workflow`) contiene el formulario y este registro; fue subido a `origin/main`.
 - Incidente resuelto: un checkout posterior había devuelto el worktree a la rama de funcionalidad; el reflog permitió diagnosticarlo y se recuperó `main` sin perder los archivos no rastreados.
 - Los archivos `.DS_Store` no relacionados permanecen sin rastrear y no se incluyeron en el alcance.
 
 ## Próximo paso
 
-Crear y subir el commit de preparación en `main`; luego buscar duplicados y crear el issue de Calculator mediante el formulario.
+Buscar duplicados entre issues abiertos y cerrados y crear el issue de Calculator mediante el formulario publicado en `main`.
