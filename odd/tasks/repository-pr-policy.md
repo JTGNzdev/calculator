@@ -40,7 +40,7 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
   - Checks: el formulario se puede interpretar; existen los controles y etiquetas esperados; `main` queda sincronizada.
   - Commit autorizado: `chore: add repository issue workflow`.
 
-- [ ] **PRPOL-02 — Crear y aprobar el issue de Calculator**
+- [x] **PRPOL-02 — Crear y aprobar el issue de Calculator**
   - Ruta: flujo de GitHub administrado por el padre mediante el formulario del repositorio.
   - Buscar duplicados entre issues abiertos y cerrados.
   - Materializar el issue con evidencia verificada del proyecto y crearlo una sola vez.
@@ -79,7 +79,10 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
 - Evidencia del commit: `66b2e1f` (`chore: add repository issue workflow`) contiene el formulario y este registro; fue subido a `origin/main`.
 - Incidente resuelto: un checkout posterior había devuelto el worktree a la rama de funcionalidad; el reflog permitió diagnosticarlo y se recuperó `main` sin perder los archivos no rastreados.
 - Los archivos `.DS_Store` no relacionados permanecen sin rastrear y no se incluyeron en el alcance.
+- La búsqueda de duplicados entre issues abiertos y cerrados no encontró candidatos.
+- Issue confirmado: `#1`, `[Funcionalidad] Construir el MVP web de Calculator`, abierto en `https://github.com/JTGNzdev/calculator/issues/1`; el cuerpo coincide con los cinco campos del formulario y la creación aplicó únicamente `enhancement`.
+- Aprobación protegida confirmada: el usuario autorizó exactamente agregar `status:approved` al issue `#1`; el actor autenticado `JTGNzdev` tenía permiso `ADMIN`; la lectura posterior confirmó `enhancement` y `status:approved` sin alterar el estado abierto.
 
 ## Próximo paso
 
-Buscar duplicados entre issues abiertos y cerrados y crear el issue de Calculator mediante el formulario publicado en `main`.
+Integrar la política de `main` en la rama de funcionalidad, traducir toda su documentación Markdown al español y abrir el PR vinculado al issue `#1`.
