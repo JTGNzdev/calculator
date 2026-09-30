@@ -1,57 +1,63 @@
 # Calculator
 
-A modern, responsive calculator web application. It is the first project in a
-progressive software-development learning path: the goal is not the calculator
-itself, but practicing frontend fundamentals with a small, maintainable
-architecture where each layer has a clear, teachable responsibility.
+Una aplicación web de calculadora moderna y responsive. Es el primer proyecto
+de un recorrido progresivo de aprendizaje de desarrollo de software: el objetivo
+no es la calculadora en sí, sino practicar fundamentos de frontend con una
+arquitectura pequeña y mantenible donde cada capa tiene una responsabilidad
+clara y enseñable.
 
-## Learning goals
+## Objetivos de aprendizaje
 
-- Keep arithmetic rules in plain, pure functions with no UI dependencies.
-- Let TypeScript describe state and actions without implementing behavior.
-- Keep React responsible for rendering and event wiring only.
-- Write behavior-focused tests for logic and UI separately.
+- Mantener las reglas aritméticas en funciones puras y simples, sin
+  dependencias de la interfaz.
+- Dejar que TypeScript describa el estado y las acciones sin implementar
+  comportamiento.
+- Mantener a React responsable únicamente del renderizado y del cableado de
+  eventos.
+- Escribir pruebas centradas en el comportamiento, por separado para la lógica
+  y para la interfaz.
 
-## Features
+## Funcionalidades
 
-- Four arithmetic operations: addition, subtraction, multiplication, division.
-- Decimal input, sign toggle (`±`), clear (`C`), and delete-last-input (`DEL`).
-- Separate expression and result display, so you always see what you typed and
-  what it evaluates to.
-- Immediate chaining: pressing another operator evaluates the pending
-  expression first, strictly left to right.
-- Operator replacement: changing the operator before typing the second operand
-  simply replaces it.
-- Recoverable errors: division by zero and out-of-range results show a clear
-  message; only the clear action (`C` or `Escape`) leaves the error state, so
-  an error never corrupts state.
-- Responsive, accessible interface that works on mobile and desktop widths,
-  with both button and keyboard input.
+- Cuatro operaciones aritméticas: suma, resta, multiplicación y división.
+- Entrada decimal, cambio de signo (`±`), borrar todo (`C`) y eliminar el
+  último dígito ingresado (`DEL`).
+- Visualización separada de la expresión y del resultado, para que siempre se muestre
+  lo que se escribió y a qué se evalúa.
+- Encadenamiento inmediato: presionar otro operador evalúa primero la
+  expresión pendiente, estrictamente de izquierda a derecha.
+- Reemplazo de operador: cambiar el operador antes de escribir el segundo
+  operando simplemente lo reemplaza.
+- Errores recuperables: la división por cero y los resultados fuera de rango
+  muestran un mensaje claro; sólo la acción de borrar (`C` o `Escape`) sale del
+  estado de error, de modo que un error nunca corrompe el estado.
+- Interfaz responsive y accesible que funciona en anchos de escritorio y
+  móviles, con entrada tanto por botones como por teclado.
 
-### Non-goals
+### Fuera de alcance
 
-No backend, database, authentication, scientific operations, external
-services, state libraries, or extra dependencies beyond the standard Vite
-React TypeScript toolchain.
+Sin backend, base de datos, autenticación, operaciones científicas,
+servicios externos, librerías de estado ni dependencias extra más allá de la
+herramienta estándar de Vite con React y TypeScript.
 
 ## Stack
 
-- [React](https://react.dev) 19 — presentation and event wiring
-- [TypeScript](https://www.typescriptlang.org) ~5.8 — type-level guarantees
-- [Vite](https://vite.dev) 6 — development server and production bundler
-- Plain CSS — styling without a component library
-- [Vitest](https://vitest.dev) 3 with jsdom and
-  [React Testing Library](https://testing-library.com) — behavior tests
+- [React](https://react.dev) 19 — presentación y cableado de eventos
+- [TypeScript](https://www.typescriptlang.org) ~5.8 — garantías a nivel de tipos
+- [Vite](https://vite.dev) 6 — servidor de desarrollo y bundler de producción
+- CSS puro — estilos sin una librería de componentes
+- [Vitest](https://vitest.dev) 3 con jsdom y
+  [React Testing Library](https://testing-library.com) — pruebas de comportamiento
 
-## Prerequisites
+## Requisitos previos
 
-- [Node.js](https://nodejs.org) (a recent LTS version)
-- npm (bundled with Node.js)
-- Git (only if you want to clone this repository yourself)
+- [Node.js](https://nodejs.org) (una versión LTS reciente)
+- npm (incluido con Node.js)
+- Git (sólo si desea clonar este repositorio por su cuenta)
 
-## Getting started
+## Primeros pasos
 
-Clone (the repository is currently private) and install dependencies:
+Clone (el repositorio es privado por ahora) e instale las dependencias:
 
 ```bash
 git clone https://github.com/JTGNzdev/calculator.git
@@ -59,110 +65,115 @@ cd calculator
 npm install
 ```
 
-## Commands
+## Comandos
 
-| Command | What it does |
+| Comando | Qué hace |
 | --- | --- |
-| `npm run dev` | Starts the Vite development server with hot reload |
-| `npm test` | Runs the test suite in watch mode (Vitest) |
-| `npm test -- --run` | Runs the full test suite once and exits |
-| `npm run build` | Type-checks with `tsc -b` and builds for production |
-| `npm run preview` | Serves the production build locally |
+| `npm run dev` | Inicia el servidor de desarrollo de Vite con hot reload |
+| `npm test` | Ejecuta la suite de pruebas en modo watch (Vitest) |
+| `npm test -- --run` | Ejecuta la suite completa de pruebas una vez y termina |
+| `npm run build` | Verifica tipos con `tsc -b` y genera el build de producción |
+| `npm run preview` | Sirve el build de producción localmente |
 
-## Usage
+## Uso
 
-Click the keypad buttons, or use the keyboard:
+Haga clic en los botones del teclado numérico o use el teclado físico:
 
-| Key | Action |
+| Tecla | Acción |
 | --- | --- |
-| `0`–`9` | Enter a digit |
-| `.` | Decimal point |
-| `+` `-` `*` `/` | Operators |
-| `Enter` or `=` | Evaluate |
-| `Backspace` | Delete the last input character |
-| `Escape` | Clear everything |
-| `N` | Toggle the sign of the current operand |
+| `0`–`9` | Ingresar un dígito |
+| `.` | Punto decimal |
+| `+` `-` `*` `/` | Operadores |
+| `Enter` o `=` | Evaluar |
+| `Backspace` | Borrar el último carácter ingresado |
+| `Escape` | Borrar todo |
+| `N` | Cambiar el signo del operando actual |
 
-Keyboard shortcuts are ignored while `Ctrl`, `Alt`, or `⌘`/`Meta` is held, so
-browser and OS shortcuts keep working. The same is true for the buttons:
-`C` clears, `±` toggles the sign, and `DEL` deletes the last character.
+Los atajos de teclado se ignoran mientras se mantiene `Ctrl`, `Alt` o
+`⌘`/`Meta`, de modo que los atajos del navegador y del sistema operativo
+siguen funcionando. Lo mismo aplica a los botones: `C` borra todo, `±` cambia
+el signo y `DEL` elimina el último carácter.
 
-Example: press `1 2 . 5`, then `+`, then `3`, then `Enter`. The display shows
-the expression `12.5 + 3 =` above the result `15.5`.
+Ejemplo: presione `1 2 . 5`, luego `+`, luego `3` y luego `Enter`. La pantalla
+muestra la expresión `12.5 + 3 =` arriba del resultado `15.5`.
 
-## Project structure
+## Estructura del proyecto
 
 ```text
 calculator/
-├── index.html                  # Vite HTML entry point
-├── package.json               # Scripts and dependencies
-├── vite.config.ts              # Vite + Vitest configuration (jsdom)
-├── tsconfig*.json              # TypeScript project configuration
+├── index.html                  # Entrada HTML de Vite
+├── package.json               # Scripts y dependencias
+├── vite.config.ts              # Configuración de Vite + Vitest (jsdom)
+├── tsconfig*.json              # Configuración del proyecto TypeScript
 ├── src/
-│   ├── main.tsx                # React root mount
-│   ├── App.tsx                 # Calculator UI: buttons, keyboard, display
-│   ├── App.test.tsx            # Component behavior tests
-│   ├── styles.css              # Responsive styling
-│   └── calculator/             # Pure domain logic (no React, no DOM)
-│       ├── types.ts            # Type-level guarantees only
-│       ├── calculator.ts       # All arithmetic and formatting rules
-│       ├── index.ts            # Public barrel for the domain
-│       └── calculator.test.ts  # Logic behavior tests
-└── odd/tasks/calculator-mvp.md # Feature planning and progress tracking
+│   ├── main.tsx                # Montaje de la raíz de React
+│   ├── App.tsx                 # Interfaz de la calculadora: botones, teclado, pantalla
+│   ├── App.test.tsx            # Pruebas de comportamiento del componente
+│   ├── styles.css              # Estilos responsive
+│   └── calculator/             # Lógica de dominio pura (sin React, sin DOM)
+│       ├── types.ts            # Sólo garantías a nivel de tipos
+│       ├── calculator.ts       # Todas las reglas aritméticas y de formateo
+│       ├── index.ts            # Módulo público del dominio
+│       └── calculator.test.ts  # Pruebas de comportamiento de la lógica
+└── odd/tasks/calculator-mvp.md # Planificación y seguimiento de la funcionalidad
 ```
 
-## The educational boundary
+## El límite educativo
 
-The project deliberately separates three kinds of responsibility:
+El proyecto separa deliberadamente tres clases de responsabilidad:
 
-1. **JavaScript-style pure logic** (`src/calculator/calculator.ts`): all
-   calculator behavior lives in plain functions over an explicit state object
-   — `applyAction` returns the next state, and the state is never mutated.
-   There is no React, no DOM, and no classes here, so the rules can be read
-   and tested in isolation.
-2. **TypeScript guarantees** (`src/calculator/types.ts`): types only. Union
-   types constrain operators and digits to legal values, the
-   `CalculatorState` interface documents state invariants (the current input
-   always parses to a finite number; the state freezes while an error is
-   active), and `CalculatorAction` is a discriminated union of user
-   interactions. Types promise what the values may be; the plain functions
-   decide what happens.
-3. **React presentation and event wiring** (`src/App.tsx`): rendering the
-   display and keypad, mapping button clicks and keyboard keys to domain
-   actions, and accessibility attributes. The component contains no arithmetic
-   and no formatting rules — it delegates everything to the public domain API
-   through `src/calculator/index.ts`.
+1. **Lógica pura al estilo JavaScript** (`src/calculator/calculator.ts`): todo
+   el comportamiento de la calculadora vive en funciones simples sobre un
+   objeto de estado explícito — `applyAction` devuelve el siguiente estado y
+   el estado nunca se muta. Aquí no hay React, ni DOM, ni clases, de modo que
+   las reglas se pueden leer y probar de forma aislada.
+2. **Garantías de TypeScript** (`src/calculator/types.ts`): sólo tipos. Los
+   tipos unión restringen los operadores y los dígitos a valores legales, la
+   interfaz `CalculatorState` documenta las invariantes del estado (la entrada
+   actual siempre se parsea a un número finito; el estado se congela mientras
+   hay un error activo) y `CalculatorAction` es una unión discriminada de las
+   interacciones del usuario. Los tipos prometen qué pueden ser los valores;
+   las funciones simples deciden qué sucede.
+3. **Presentación y cableado de eventos en React** (`src/App.tsx`): el
+   renderizado de la pantalla y del teclado numérico, el mapeo de los clics
+   en botones y de las teclas del teclado a acciones del dominio, y los
+   atributos de accesibilidad. El componente no contiene aritmética ni
+   reglas de formateo — delega todo a la API pública del dominio a través de
+   `src/calculator/index.ts`.
 
-## Testing
+## Pruebas
 
-Tests focus on observable behavior, not implementation details:
+Las pruebas se centran en el comportamiento observable, no en detalles de
+implementación:
 
-- `src/calculator/calculator.test.ts` covers the pure domain in isolation:
-  digit and decimal entry, sign toggle, delete, all four operations, chained
-  evaluation, operator replacement, behavior after `=`, safe no-ops, division
-  by zero, out-of-range results, and recovery through `clear`.
-- `src/App.test.tsx` covers the rendered UI with React Testing Library:
-  button interactions, keyboard input (including the `N` sign toggle and
-  modifier-key guards), expression and result display, error rendering, and
-  listener cleanup.
+- `src/calculator/calculator.test.ts` cubre el dominio puro de forma aislada:
+  ingreso de dígitos y decimales, cambio de signo, borrado, las cuatro
+  operaciones, evaluación encadenada, reemplazo de operador, comportamiento
+  después de `=`, no-ops seguros, división por cero, resultados fuera de rango
+  y recuperación mediante `clear`.
+- `src/App.test.tsx` cubre la interfaz renderizada con React Testing Library:
+  interacciones con botones, entrada por teclado (incluido el cambio de signo
+  con `N` y las guardas de teclas modificadoras), visualización de expresión y
+  resultado, renderizado de errores y limpieza de listeners.
 
-Run everything once with:
+Ejecute todo una vez con:
 
 ```bash
 npm test -- --run
 ```
 
-## Repository context
+## Contexto del repositorio
 
-This is a private GitHub repository
-([JTGNzdev/calculator](https://github.com/JTGNzdev/calculator)). There is no
-deployment, no public release, and no published package — the project is a
-local learning exercise under active development.
+Este es un repositorio privado de GitHub
+([JTGNzdev/calculator](https://github.com/JTGNzdev/calculator)). No hay
+deployment, ni publicación pública, ni paquete publicado — el proyecto es un
+ejercicio de aprendizaje local en desarrollo activo.
 
-## Possible next steps
+## Posibles próximos pasos
 
-These are ideas only; none of them is implemented yet:
+Son sólo ideas; ninguna está implementada todavía:
 
-- Percent and memory keys.
-- A calculation history panel.
-- Publishing the repository or deploying the app (a decision for later).
+- Teclas de porcentaje y memoria.
+- Un panel de historial de cálculos.
+- Publicar el repositorio o hacer deploy de la app (una decisión para más
+  adelante).

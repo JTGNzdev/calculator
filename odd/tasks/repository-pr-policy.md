@@ -72,7 +72,7 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
 - Descubrimiento inicial: no había archivos `.github`, issues ni PR existente para la rama de funcionalidad.
 - Las etiquetas existentes son únicamente las predeterminadas de GitHub; faltan las etiquetas del flujo.
 - Capacidad del repositorio: el actor autenticado tiene permisos `admin` y `maintain`.
-- Evidencia de la aplicación: pasan 63 tests y el build de producción; la rama de funcionalidad está sincronizada con su remoto.
+- Evidencia de la aplicación: pasan 63 tests y el build de producción; la rama de funcionalidad estuvo sincronizada al cierre del MVP y ahora contiene la política integrada y la traducción pendiente de subir.
 - Preferencia de idioma confirmada: todos los Markdown existentes y futuros deben estar en español.
 - PRPOL-01: el formulario contiene cinco campos obligatorios en español y sólo aplica `enhancement` al crear el issue; la verificación estructural independiente fue aceptada en `main`.
 - Etiquetas creadas y verificadas en GitHub: `status:approved`, `type:feature` y `size:exception`, con descripciones en español.
@@ -82,7 +82,9 @@ El repositorio nuevo de GitHub no tiene un formulario YAML para issues y carece 
 - La búsqueda de duplicados entre issues abiertos y cerrados no encontró candidatos.
 - Issue confirmado: `#1`, `[Funcionalidad] Construir el MVP web de Calculator`, abierto en `https://github.com/JTGNzdev/calculator/issues/1`; el cuerpo coincide con los cinco campos del formulario y la creación aplicó únicamente `enhancement`.
 - Aprobación protegida confirmada: el usuario autorizó exactamente agregar `status:approved` al issue `#1`; el actor autenticado `JTGNzdev` tenía permiso `ADMIN`; la lectura posterior confirmó `enhancement` y `status:approved` sin alterar el estado abierto.
+- Integración confirmada: `d3c8a88` incorporó los commits actuales de política de `main` en `feat/calculator-interface` sin modificar el comportamiento de la aplicación.
+- Traducción aceptada: `README.md` y `odd/tasks/calculator-mvp.md` quedaron en español profesional neutral; se preservaron comandos, rutas, IDs, hashes, conteos y evidencia histórica. La verificación independiente aprobó los 63 tests y el build.
 
 ## Próximo paso
 
-Integrar la política de `main` en la rama de funcionalidad, traducir toda su documentación Markdown al español y abrir el PR vinculado al issue `#1`.
+Confirmar y subir la traducción, crear el PR vinculado al issue `#1`, solicitar la excepción de tamaño exacta sobre ese PR y verificar sus metadatos y checks.
